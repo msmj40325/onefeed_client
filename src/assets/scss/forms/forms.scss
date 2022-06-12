@@ -1,0 +1,74 @@
+.login-wrapper {
+  margin: 3ch 0;
+}
+
+form {
+  label {
+    display: block;
+    margin: 0 0 3px 0;
+
+    > span.required {
+      color: red;
+    }
+  }
+
+  .input-row {
+    display: block;
+    margin: 12px 0;
+
+    > input {
+      outline: 0;
+      border: none;
+      padding: 11px 8px;
+      width: 100%;
+
+      background: #f2f2f2 0% 0% no-repeat padding-box;
+      box-shadow: inset 0px 3px 6px #00000029;
+      border-radius: 5px;
+    }
+  }
+
+  button {
+    outline: 0;
+    border: none;
+    background-color: $primary-color;
+    color: #fff;
+    display: block;
+    width: 100%;
+    padding: 1.5ch 0;
+    border-radius: $border-radius;
+    transition: background-color $transition;
+
+    &:hover {
+      background-color: $primary-color-hover;
+    }
+  }
+}
+
+.forgot-password {
+  margin: 1.5ch 0;
+  display: block;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: $primary-color;
+
+    &:hover {
+      color: $primary-color-hover;
+    }
+  }
+}
+
+.sign-in-or-up {
+  width: fit-content;
+  color: #fff;
+  margin: 2ch auto;
+  display: block;
+
+  background-color: $green;
+
+  &:hover {
+    background-color: $green-hover;
+  }
+}

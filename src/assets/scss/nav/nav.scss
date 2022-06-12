@@ -1,0 +1,173 @@
+.nav-bar {
+  height: 50px;
+  padding: 0 1.5ch;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 5px 0px 10px 2px #888888;
+  .nav-links {
+    font-size: 1.2rem;
+    a {
+      padding: 1rem;
+      text-decoration: none;
+      transition: 0.3s;
+      &:hover {
+        color: deeppink;
+      }
+    }
+  }
+}
+
+/* BURGER */
+#pagelayer {
+  z-index: 8;
+  display: none;
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: #00000080;
+  transition: 0.3s;
+
+  &.open {
+    html,
+    body {
+      overflow: hidden;
+    }
+  }
+}
+.burger {
+  display: none;
+  top: 0;
+  right: 0;
+  z-index: 9;
+  margin-left: auto;
+  height: fit-content;
+  width: 50px;
+  cursor: pointer;
+
+  > * {
+    transition: 0.3s;
+  }
+
+  .line1 {
+    width: 35%;
+    height: 5px;
+    background-color: black;
+    margin: 0 0 10px auto;
+  }
+  .line2 {
+    width: 65%;
+    height: 5px;
+    background-color: black;
+    margin: 0 0 10px auto;
+  }
+  .line3 {
+    width: 100%;
+    height: 5px;
+    background-color: black;
+    margin: 0 0 0px auto;
+  }
+
+  &:hover {
+    .line1,
+    .line2,
+    .line3 {
+      width: 100%;
+    }
+  }
+}
+
+.sideBar {
+  display: none;
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  height: 100vh;
+  width: 0;
+  background-color: #fff;
+  transition: 0.3s;
+  overflow: auto;
+
+  .sideBar-content {
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: auto;
+    a {
+      color: #000;
+      font-weight: 600;
+      margin: 1.3em;
+      font-size: 1.5rem;
+      text-align: right;
+      text-decoration: none;
+    }
+    i {
+      margin: 2rem;
+      font-size: 2rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 766px) {
+  .pagelayer {
+    display: block;
+  }
+  .burger {
+    display: block;
+  }
+  .sideBar {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+  }
+}
+
+/* lol */
+// .nav-bar {
+//   height: 50px;
+//   padding: 1.6rem;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   box-shadow: 5px 0px 10px 2px #888888;
+//   .nav-links {
+//     font-size: 1.2rem;
+//     a {
+//       padding: 1rem;
+//       text-decoration: none;
+//       transition: 0.3s;
+//       &:hover {
+//         color: deeppink;
+//       }
+//     }
+//   }
+//   #logo {
+//     height: 28px;
+//     .cls-1 {
+//       fill: #24aa99;
+//       transition: 0.3s;
+//     }
+//     &:hover {
+//       .cls-1 {
+//       }
+//     }
+//   }
+// }
+
+// @media only screen and (max-width: 700px) {
+//   .nav-links {
+//     display: none;
+//   }
+//   .pagelayer {
+//     display: block;
+//   }
+//   .burger {
+//     display: block;
+//   }
+// }

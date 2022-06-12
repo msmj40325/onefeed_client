@@ -1,0 +1,441 @@
+@import "_variables.scss";
+@import "_helpers.scss";
+@import "forms/forms.scss";
+@import "nav/nav.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // text-align: center;
+  // color: #2c3e50;
+  // position: relative;
+}
+
+body {
+  margin: 0;
+  font-size: 16px;
+}
+
+main {
+  padding: 0 0 65px 0;
+}
+
+h1,
+h2,
+h3 {
+  color: $primary-color;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1.4em;
+  color: $secondary-color;
+}
+
+button,
+.btn {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.fb-login {
+  display: block;
+  margin: 0 auto;
+  background-color: #3b5998;
+  color: #fff;
+
+  i {
+    color: #fff;
+    font-size: 1.3em;
+    margin: 0 1ch 0 0;
+  }
+}
+
+nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+
+a.logo {
+  font-size: 1em;
+  text-decoration: none;
+
+  > h1 {
+    transition: color 200ms ease-in-out;
+  }
+
+  &:hover {
+    > h1 {
+      color: deeppink;
+    }
+  }
+}
+
+button {
+  outline: none;
+  border: 0;
+  padding: 9px 14px;
+  border-radius: $border-radius;
+}
+
+.feed-filter {
+  margin: 1ch 0;
+  font-weight: 700;
+
+  > div {
+    margin: 0.5ch 0;
+  }
+  button.filterBtn {
+    &.active {
+      background-color: $secondary-color;
+      color: #fff;
+    }
+  }
+}
+
+.lh {
+  line-height: 2.7ch;
+}
+
+div.feed {
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .postContainer {
+    display: flex;
+    margin: 1rem auto;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    align-content: center;
+    box-shadow: 0px 0px 5px -1px;
+    border-radius: 10px;
+    padding: 1rem;
+  }
+
+  /* Header */
+  .postHeader {
+    width: 100%;
+    // display: grid;
+    // // grid-template-columns: 60px 1fr 1fr;
+    // grid-template-columns: repeat(auto-fit, minmax(60px, 80px));
+    align-items: center;
+    // // text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    // justify-content: space-between;
+
+    .post-profile-pic {
+      width: 50px;
+    }
+
+    .name {
+      font-weight: 700;
+    }
+
+    .username,
+    .created {
+      color: #555;
+    }
+
+    img {
+      border-radius: 50%;
+      width: 50px;
+    }
+  }
+
+  /* Body */
+  .postBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    justify-self: flex-start;
+    margin: 1.5em 0;
+
+    p {
+      line-height: 1.4em;
+    }
+  }
+  .soMeLogo {
+    // margin: 1ch 0 0 auto;
+    width: 30px;
+  }
+
+  /* Footer */
+  .postFooter {
+    border-top: 1px solid grey;
+    display: flex;
+    font-size: 1rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.created {
+  color: #555;
+}
+
+.wrapper {
+  padding: 1ch 2ch;
+  margin: 2ch auto;
+  max-width: 766px;
+}
+
+.page {
+  min-height: 100vh;
+  position: relative;
+
+  .waves {
+    background-image: url(assets/img/wave.svg);
+    background-position: center;
+    background-repeat-y: no-repeat;
+    background-repeat-x: repeat;
+    background-size: contain;
+    width: 100%;
+    height: 30vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Manage view */
+.some-grid {
+  margin-top: 20px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr;
+}
+
+.connect-socials {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5ch 3ch;
+  border-radius: 10px;
+  background-color: #555;
+  user-select: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  > .name {
+    p {
+      font-size: 1.8rem;
+      letter-spacing: 0.08ch;
+      color: #fff;
+      margin: 0 0 6px 0;
+    }
+
+    span {
+      font-weight: 700;
+      color: #fff;
+    }
+  }
+
+  .icon {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 50px;
+    width: 50px;
+  }
+}
+
+.grid-item > .overlay {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #00000075;
+  z-index: 2;
+
+  .connected,
+  .not-connected {
+    text-align: center;
+    margin: 0 auto;
+    width: 80vw;
+    min-height: 20vh;
+    padding: 5ch 1.5ch;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .input-controller {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-size: 2em;
+        margin-bottom: 1ch;
+      }
+
+      input {
+        outline: none;
+        font-size: 1.3em;
+        margin-bottom: 2ch;
+        background-color: #eee;
+        border-radius: 5px;
+      }
+    }
+
+    p {
+      font-size: 1.5em;
+      margin-bottom: 1.5ch;
+    }
+
+    button {
+      font-size: 1.2em;
+      color: #fff;
+      padding: 1.2ch 0;
+      width: 100%;
+      max-width: 325px;
+      background-color: $primary-color;
+
+      &.disconnect {
+        background-color: red;
+      }
+    }
+  }
+}
+
+/* Active twitter background color */
+#Twitter.connect-socials.connected {
+  background-color: #1da1f2;
+}
+
+/* Active facebook background color */
+#Facebook.connect-socials.connected {
+  background-color: #3b5998;
+}
+
+.connect-socials > .icon {
+  //switch between 0% and 100%, based on whether user is connected or not
+  filter: grayscale(100%);
+}
+
+.connect-socials.connected > .icon {
+  filter: grayscale(0%);
+}
+
+#Facebook > .icon {
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg);
+}
+
+#Twitter > .icon {
+  background-image: url(assets/img/twitter.png);
+}
+
+/* Sweetalert */
+.swal2-title,
+.swal2-html-container,
+.swal2-footer {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+
+@media only screen and (max-width: 1200px) {
+  .postContainer {
+    margin: 1rem 5%;
+  }
+}
+
+/* Source details page */
+.source-details {
+  .sd-author {
+    .name {
+      font-size: 1.1em;
+      font-weight: 700;
+      margin: 0 0 3px 0;
+      color: $primary-color;
+    }
+
+    /* lol */
+    // .author-mic {
+    //   font-size: .8em;
+    //   background-color: deeppink;
+    //   border-radius: 50%;
+    //   padding: 3px;
+    //   transform: translateY(-5px);
+    // }
+
+    .username {
+      text-decoration: none;
+      color: $secondary-color;
+    }
+  }
+  .sd-img,
+  .sd-logo-img {
+    border-radius: 50%;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .sd-img {
+    width: 60px;
+  }
+
+  .sd-logo-img {
+    height: 35px;
+  }
+
+  .tweet-text {
+    font-size: 1.1em;
+    line-height: 24px;
+  }
+
+  .metrics {
+    p {
+      font-weight: 700;
+      > span {
+        font-weight: 400;
+      }
+    }
+  }
+
+  .actions {
+    font-size: 1.8em;
+    margin-top: 3ch;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+  }
+}
+
+.post-img {
+  width: 100%;
+  object-fit: contain;
+}
